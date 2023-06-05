@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Searcher</title>
+
+    <link rel="icon" type="image/svg" sizes="32x32" href="/static/img/crossword.svg">
+
+
+    <link rel="stylesheet" href='/static/bootstrap/bootstrap.min.css'>
+    <link rel="stylesheet" href='/static/css/styles.css'>
+
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <script src='/static/bootstrap/bootstrap.bundle.min.js'></script>
+
+</head>
+
+<body>
+    <div class="container mt-5 mb-2">
+        <div class="row text-center">
+            <h2>Word Search Solver</h2>
+            
+        </div>
+
+        <div class="row py-5">
+            <div class="col-md-12 col-lg-6">
+                <div class="row px-0 pt-3 text-center">
+                    <h5>Drop your word search here!</h5>
+                </div>
+
+                <div class="row px-0 image-drop">
+                    <!-- <label for="formFileSm" class="form-label">Small file input example</label>-->
+                    <input class="form-control image-drop form-control-sm" id="crossword-upload" type="file">
+                </div>
+
+                <div class="row px-0 pt-3 text-center">
+                    <h5>Enter Grid Dimensions</h5>
+                </div>
+                <div class="row px-0 image-drop">
+                    <!-- <label for="formFileSm" class="form-label">Small file input example</label>-->
+                    <input type="number" class="form-control" placeholder="Height" step="1" id="g-height">
+                    <input type="number" class="form-control" placeholder="Width" step="1" id="g-width">
+                </div>
+
+                <div class="form-check py-1 box-check">
+                    <input class="form-check-input" type="checkbox" id="g-outline">
+                    <label class="form-check-label">
+                        Grid contains box outline?
+                    </label>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-12 col-lg-6">
+                <div class="row px-0 py-3 text-center">
+                    <h5>What are the words I should find?</h5>
+                </div>
+
+                <div class="row px-0 image-drop">
+                    <!-- <label for="formFileSm" class="form-label">Small file input example</label> -->
+                    <button type="button" onclick="searchWord()" class="btn choice-btn btn-primary py-2 dummy">Taking A
+                        Picture</button>
+                    <button type="button" onclick="typeWord()" class="btn choice-btn btn-primary py-2">Type Them
+                        In</button>
+                </div>
+
+                <div id="words-to-search">
+                    <div class="row px-0 pt-3 text-center">
+                        <h5>Drop words you want to find here!</h5>
+                    </div>
+                    <div class="row px-0 image-drop">
+                        <input class="form-control image-drop form-control-sm" id="formFileSm" type="file">
+                    </div>
+                </div>
+
+                <div id="type-in-words">
+                    <div class="row px-0 pt-3 text-center">
+                        <h5>Write words you want to find here!</h5>
+                        <p class="text-muted">(separate words by commas)</p>
+                    </div>
+                    <div class="row px-0 image-drop">
+                        <input type="text" class="form-control" id="search-words" placeholder="Words"
+                            aria-label="Username">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="container mb-5">
+        <div class="row px-0 pt-3 text-center">
+            <h4>Time to solve!</h4>
+        </div>
+
+        <div class="row pt-1 text-center">
+            <div class="col-md-12 col-lg-6">
+                <div class="row px-0 py-3 text-center">
+                    <h5>Your Original Crossword</h5>
+                </div>
+
+                <div class="row px-0 py-3 image-preview">
+                    <img src="" class="rounded" id="original-crossword-view">
+                </div>
+
+
+            </div>
+
+            <div class="col-md-12 col-lg-6">
+                <div class="row px-0 py-3 text-center">
+                    <h5>Your Solved Crossword</h5>
+                </div>
+
+                <div class="row px-0 py-3 image-preview">
+                    <img src="" class="rounded" id="solved-crossword-view">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row pt-1 text-center">
+            <button type="button" id="solver-btn" class="btn btn-primary solve-btn mb-2">
+                Solve
+            </button>
+
+        </div>
+
+        <div class="row pt-1 text-center" id="errors">
+
+        </div>
+
+
+        <p class="text-muted float-end version"> Version 0.9</p>
+        <a target="_blank" class="mx-2 float-end repo" href="https://github.com/AmruthHB//Word-Searcher">
+            <i style="color:#211F1F" class="fab fa-github-square fa-2x "></i>
+        </a>
+        
+    </div>
+
+
+
+
+
+
+
+
+    <script src='/static/js/main.js'></script>
+    <script src='/static/js/ui.js'></script>
+</body>
+
+</html>
